@@ -18,18 +18,29 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News from </title>
+    <title>News from  </title>
   </head>
+  
+  <%= @city = params["q"]%>
   <body>
 
     <div class="container mt-5">
-      <h1>News</h1>
-      <p>Where would you like to see the news for?</p>
-      <form action="/news">
-        <input type="text" name="q">
-        <button type="submit">Read</submit>
-        </form>
+      <h1>Read the news for <%= params["q"] %> </h1>
+    <p>
+    Location's Latitude and Longitude:  
+    <%= 
+        results = Geocoder.search(params["q"])
+        results.first.coordinates 
+    %>
+    </p>
+    
+    <p>
+    <i>Powered by News API</i>
+    </p>
     </div>
+  
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
