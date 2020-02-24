@@ -17,11 +17,6 @@ end
 get "/news" do
   view "news"
  # Read the news for @city 
-  #url = "https://newsapi.org/v2/top-headlines?q=<%= @city %>&apiKey=b137492ad1b645a0aea1cab9c6055b55"
-  #news = HTTParty.get(url).parsed_response.to_hash
+  #url = "https://newsapi.org/v2/top-headlines?q=<%=params["q"] %>&apiKey=b137492ad1b645a0aea1cab9c6055b55"
+  #news = HTTParty.get(@url).parsed_response.to_hash
 end
-
-# <%=     
-#         url = "https://newsapi.org/v2/top-headlines?q=<%= @city %>&apiKey=b137492ad1b645a0aea1cab9c6055b55"
-#         news = HTTParty.get(url).parsed_response.to_hash
-#     %>

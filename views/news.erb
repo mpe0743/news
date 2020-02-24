@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+     <body style="background-color:#E9F7EF;">
+
+  <link rel='icon' href='https://lh3.googleusercontent.com/proxy/GAzXAp64ZP_N47qNgqK1cn9ylbjAAWaiFLoYFjiZRqUMLmvw7902jSDrZCTD5Fysyf7KKUWu0-m2np7OrXaYkF8uNAL2E3hUG8oGFqdf5lHcrVVvzESSwaJPWf65ogN7CF5p6oCWK2qFxBKM59nCo9qj0Q' type='image/x-icon'/ >
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,6 +39,10 @@
     %>
     </p>
     <p>
+    <a class="btn btn-warning" href="https://newsapi.org/v2/top-headlines?q=<%=params["q"] %>&apiKey=b137492ad1b645a0aea1cab9c6055b55" role="button">Click here to see all headline stories.</a>
+    </p>
+   
+    <p>
         In <%= params["q"] %>, it is currently 
         <%=forecast = ForecastIO.forecast(@latlong[0],@latlong[1]).to_hash
         current_temperature = forecast ["currently"]["temperature"] %> 
@@ -64,8 +71,13 @@
     <p>
     <i>Powered by News API</i>
     </p>
+    <p>
+      
+    </p>
     </div>
-  
+    </div>
+    </div>
+
 
 
 
