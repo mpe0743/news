@@ -22,6 +22,7 @@
   </head>
   
   <%= @city = params["q"]%>
+  
   <body>
 
     <div class="container mt-5">
@@ -30,10 +31,18 @@
     Location's Latitude and Longitude:  
     <%= 
         results = Geocoder.search(params["q"])
-        results.first.coordinates 
+        results.first.coordinates
     %>
     </p>
-    
+    <p>
+        In <%= params["q"] %>, it is currently 
+        <%=forecast = ForecastIO.forecast(42.0574063,-87.6722787).to_hash
+        current_temperature = forecast ["currently"]["temperature"] %> 
+        degrees and <%= conditions = forecast ["currently"]["summary"]%>
+    </p>
+         
+        
+        
     <p>
     <i>Powered by News API</i>
     </p>

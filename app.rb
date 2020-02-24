@@ -9,17 +9,20 @@ before { puts "Parameters: #{params}" }
 # enter your Dark Sky API key here
 ForecastIO.api_key = "6ad76b3c7066f4df2c367d3dfe11ffa8"
 
+#current_temperature = forecast ["currently"]["temperature"]
+#conditions = forecast ["currently"]["summary"]
+#@city = params["q"]
+
+
 get "/" do
     view "ask"
 end
 
 get "/news" do
-  # do everything else
-  #view "news"
-  @city = params["q"]
-  Read the news for @city 
-  url = "https://newsapi.org/v2/top-headlines?q=<%= @city %>&apiKey=b137492ad1b645a0aea1cab9c6055b55"
-  news = HTTParty.get(url).parsed_response.to_hash
+  view "news"
+ # Read the news for @city 
+  #url = "https://newsapi.org/v2/top-headlines?q=<%= @city %>&apiKey=b137492ad1b645a0aea1cab9c6055b55"
+  #news = HTTParty.get(url).parsed_response.to_hash
 end
 
 # <%=     
