@@ -7,10 +7,10 @@ def view(template); erb template.to_sym; end
 before { puts "Parameters: #{params}" }                                     
 
 # enter your Dark Sky API key here
-ForecastIO.api_key = "YOUR-API-KEY"
+ForecastIO.api_key = "6ad76b3c7066f4df2c367d3dfe11ffa8"
 
 get "/" do
-  # show a view that asks for the location
+    view "ask"
 end
 
 get "/news" do
