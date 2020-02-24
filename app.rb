@@ -9,10 +9,6 @@ before { puts "Parameters: #{params}" }
 # enter your Dark Sky API key here
 ForecastIO.api_key = "6ad76b3c7066f4df2c367d3dfe11ffa8"
 
-#current_temperature = forecast ["currently"]["temperature"]
-#conditions = forecast ["currently"]["summary"]
-#@city = params["q"]
-
 
 get "/" do
     view "ask"
